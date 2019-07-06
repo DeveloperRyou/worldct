@@ -86,7 +86,7 @@
       ?>
       <div class="view_main">
         <a href="view.php?menu=<?php echo $_GET['menu']?>&id=<?php echo $_GET['id']-1?>"><img src="https://storage.googleapis.com/worldct.appspot.com/img/img_before.png" class="before"/></a>
-        <img src="./img/<?php echo $file_name?>.jpg" class="mainimg"/>
+        <img src="https://storage.googleapis.com/worldct.appspot.com/img/<?php echo $file_name?>.jpg" class="mainimg"/>
         <a href="view.php?menu=<?php echo $_GET['menu']?>&id=<?php echo $_GET['id']+1?>"><img src="https://storage.googleapis.com/worldct.appspot.com/img/img_next.png" class="next"/></a>
       </div>
     <?php } else if($_GET['menu']=='7'){ ?>
