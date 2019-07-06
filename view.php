@@ -12,12 +12,7 @@
       break;
     }
   }
-  if(!($_GET['menu']=='7'||$_GET['menu']=='8')){
-    if((int)$_GET['id']>$total_file){
-      $tmp=$total_file;
-      header("Location: ./view.php?menu={$_GET['menu']}&id={$tmp} ");
-    }
-  }
+  if($_GET['id']>$total_file) $_GET['id']=$total_file;
   ?>
 
 <?php
