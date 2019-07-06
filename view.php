@@ -2,7 +2,7 @@
 <?php
 
   if(!$_GET['id'])$_GET['id']=1;
-  $file_name = 'menu_'.$_GET['menu'].'_'.(string)$_GET['id'];
+  $file_name = 'menu_'.$_GET['menu'].'_'.$_GET['id'];
   $total_file = 0;
   if($_GET['menu']=='3_2') $_GET['ogg']='true';
   for($i=1;;$i++){
@@ -13,15 +13,9 @@
     }
   }
   if(!($_GET['menu']=='7'||$_GET['menu']=='8')){
-    $is_file = file_exists('./img/'.$file_name.'.jpg');
+    $is_file = file_exists("./img/{$file_name}.jpg");
     if(!$is_file){
-      if((int)$_GET['id']<=0&&$_GET['id']){
-        $tmp=$total_file;
-      }
-      else{
-        $tmp=1;
-      }
-
+      $tmp=$total_file;
       header("Location: ./view.php?menu={$_GET['menu']}&id={$tmp} ");
     }
   }
@@ -53,7 +47,7 @@
       <div class="view_head">
         <a href="menu.php"><img src="./img/img_menubar.png" class="menubar"/></a>
         <?php
-        $is_file = file_exists('./media/'.$file_name.'.mp4');
+        $is_file = file_exists("./media/{$file_name}.mp4");
         if($is_file) $img_movie='img_movie.png';
         else $img_movie='img_nomovie.png';
         ?>
