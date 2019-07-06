@@ -1,32 +1,18 @@
 
 <?php
-
-function remoteFileExist($filepath) {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,$filepath);
-    curl_setopt($ch, CURLOPT_NOBODY, 1);
-    curl_setopt($ch, CURLOPT_FAILONERROR, 1);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    if(curl_exec($ch)!==false) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
   if(!$_GET['id'])$_GET['id']=1;
   $file_name = 'menu_'.$_GET['menu'].'_'.$_GET['id'];
   $total_file = 0;
   if($_GET['menu']=='3_2') $_GET['ogg']='true';
   for($i=1;;$i++){
-    $tmp_is_file=remoteFileExist('https://storage.googleapis.com/worldct.appspot.com/img/'.'menu_'.$_GET['menu'].'_'.$i.'.jpg');
+    $tmp_is_file=file_get_contents('https://storage.googleapis.com/worldct.appspot.com/img/'.'menu_'.$_GET['menu'].'_'.$i.'.jpg');
     if(!$tmp_is_file){
       $total_file=$i-1;
       break;
     }
   }
   if(!($_GET['menu']=='7'||$_GET['menu']=='8')){
-    $is_file = remoteFileExist('https://storage.googleapis.com/worldct.appspot.com/img/'.$file_name.'.jpg');
+    $is_file = file_get_contents('https://storage.googleapis.com/worldct.appspot.com/img/'.$file_name.'.jpg');
     if(!$is_file){
       if($_GET['id']<='0'&&$_GET['id']){
         $tmp=$total_file;
@@ -66,7 +52,7 @@ function remoteFileExist($filepath) {
       <div class="view_head">
         <a href="menu.php"><img src="https://storage.googleapis.com/worldct.appspot.com/img/img_menubar.png" class="menubar"/></a>
         <?php
-        $is_file = remoteFileExist('https://storage.googleapis.com/worldct.appspot.com/media/'.$file_name.'.mp4');
+        $is_file = file_get_contents('https://storage.googleapis.com/worldct.appspot.com/media/'.$file_name.'.mp4');
         if($is_file) $img_movie='img_movie.png';
         else $img_movie='img_nomovie.png';
         ?>
