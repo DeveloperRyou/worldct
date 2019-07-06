@@ -5,14 +5,14 @@
   $total_file = 0;
   if($_GET['menu']=='3_2') $_GET['ogg']='true';
   for($i=1;;$i++){
-    $tmp_is_file=file_exists('./img/'.'menu_'.$_GET['menu'].'_'.$i.'.jpg');
+    $tmp_is_file=file_exists('https://storage.googleapis.com/worldct.appspot.com/img/'.'menu_'.$_GET['menu'].'_'.$i.'.jpg');
     if(!$tmp_is_file){
       $total_file=$i-1;
       break;
     }
   }
   if(!($_GET['menu']=='7'||$_GET['menu']=='8')){
-    $is_file = file_exists('./img/'.$file_name.'.jpg');
+    $is_file = file_exists('https://storage.googleapis.com/worldct.appspot.com/img/'.$file_name.'.jpg');
     if(!$is_file){
       if($_GET['id']<='0'&&$_GET['id']){
         $tmp=$total_file;
@@ -50,32 +50,32 @@
   <body>
     <div class="background">
       <div class="view_head">
-        <a href="menu.php"><img src="./img/img_menubar.png" class="menubar"/></a>
+        <a href="menu.php"><img src="https://storage.googleapis.com/worldct.appspot.com/img/img_menubar.png" class="menubar"/></a>
         <?php
-        $is_file = file_exists('./media/'.$file_name.'.mp4');
+        $is_file = file_exists('https://storage.googleapis.com/worldct.appspot.com/media/'.$file_name.'.mp4');
         if($is_file) $img_movie='img_movie.png';
         else $img_movie='img_nomovie.png';
         ?>
-        <img src="./img/<?php echo $img_movie?>" class="movie" <?php if($img_movie=='img_movie.png') echo "onclick=\" location.href='media.php?menu={$_GET['menu']}&id={$_GET['id']}&ogg={$_GET['ogg']}'\""?>/>
+        <img src="https://storage.googleapis.com/worldct.appspot.com/img/<?php echo $img_movie?>" class="movie" <?php if($img_movie=='img_movie.png') echo "onclick=\" location.href='media.php?menu={$_GET['menu']}&id={$_GET['id']}&ogg={$_GET['ogg']}'\""?>/>
 
         <?php
         if($_GET['menu'][0]=='1'||$_GET['menu'][0]=='3'||$_GET['menu'][0]=='5') {
           ?>
         <a href="view.php?menu=<?php echo $_GET['menu'][0].'_1'?>">
         <div class="seperate <?php if($_GET['menu'][2]=='1') echo 'clicked'; ?> ">
-          <img src="./img/icon_menu_<?php echo $_GET['menu'][0].'_1' ?>.png" class="icon">
+          <img src="https://storage.googleapis.com/worldct.appspot.com/img/icon_menu_<?php echo $_GET['menu'][0].'_1' ?>.png" class="icon">
           <p class="describe"><?php echo $menu_name[$_GET['menu'][0].'_1'];?></p>
         </div></a>
         <a href="view.php?menu=<?php echo $_GET['menu'][0].'_2'?>">
         <div class="seperate <?php if($_GET['menu'][2]=='2') echo 'clicked'; ?> ">
-          <img src="./img/icon_menu_<?php echo $_GET['menu'][0].'_2' ?>.png" class="icon">
+          <img src="https://storage.googleapis.com/worldct.appspot.com/img/icon_menu_<?php echo $_GET['menu'][0].'_2' ?>.png" class="icon">
           <p class="describe"><?php echo $menu_name[$_GET['menu'][0].'_2'];?></p>
         </div></a>
         <?php }
         else {
           ?>
         <div class="submenu clicked">
-          <img src="./img/icon_menu_<?php echo $_GET['menu']?>.png" class="icon">
+          <img src="https://storage.googleapis.com/worldct.appspot.com/img/icon_menu_<?php echo $_GET['menu']?>.png" class="icon">
           <p class="describe"><?php echo $menu_name[$_GET['menu']]; ?></p>
         </div>
         <?php }?>
@@ -85,9 +85,9 @@
       if(!($_GET['menu']=='7'||$_GET['menu']=='8')) {
       ?>
       <div class="view_main">
-        <a href="view.php?menu=<?php echo $_GET['menu']?>&id=<?php echo $_GET['id']-1?>"><img src="./img/img_before.png" class="before"/></a>
+        <a href="view.php?menu=<?php echo $_GET['menu']?>&id=<?php echo $_GET['id']-1?>"><img src="https://storage.googleapis.com/worldct.appspot.com/img/img_before.png" class="before"/></a>
         <img src="./img/<?php echo $file_name?>.jpg" class="mainimg"/>
-        <a href="view.php?menu=<?php echo $_GET['menu']?>&id=<?php echo $_GET['id']+1?>"><img src="./img/img_next.png" class="next"/></a>
+        <a href="view.php?menu=<?php echo $_GET['menu']?>&id=<?php echo $_GET['id']+1?>"><img src="https://storage.googleapis.com/worldct.appspot.com/img/img_next.png" class="next"/></a>
       </div>
     <?php } else if($_GET['menu']=='7'){ ?>
         <div class="view_main">
@@ -108,9 +108,9 @@
         </div>
     <?php }?>
       <div class="view_footer">
-        <img src="./img/img_statebar.png" class="statebar"/>
-        <img src="./img/img_minirocket.png" class="rocket" style="left:<?php echo -43+23*($_GET['id']/$total_file)?>%" />
-        <a href="index.php"><img src="./img/img_earth.png" class="home"/></a>
+        <img src="https://storage.googleapis.com/worldct.appspot.com/img/img_statebar.png" class="statebar"/>
+        <img src="https://storage.googleapis.com/worldct.appspot.com/img/img_minirocket.png" class="rocket" style="left:<?php echo -43+23*($_GET['id']/$total_file)?>%" />
+        <a href="index.php"><img src="https://storage.googleapis.com/worldct.appspot.com/img/img_earth.png" class="home"/></a>
       </div>
     </div>
   </body>
