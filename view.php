@@ -13,8 +13,7 @@
     }
   }
   if(!($_GET['menu']=='7'||$_GET['menu']=='8')){
-    $is_file = file_exists("./img/{$file_name}.jpg");
-    if(!$is_file){
+    if((int)$_GET['id']>$total_file){
       $tmp=$total_file;
       header("Location: ./view.php?menu={$_GET['menu']}&id={$tmp} ");
     }
@@ -33,6 +32,53 @@
   $menu_name['6']="장난감";
   $menu_name['7']="민요";
   $menu_name['8']="춤";
+
+  $media['menu_1_1_1']=true;
+  $media['menu_1_2_2']=true;
+  $media['menu_1_2_3']=true;
+  $media['menu_1_2_4']=true;
+  $media['menu_1_2_8']=true;
+  $media['menu_1_2_11']=true;
+  $media['menu_1_2_12']=true;
+  $media['menu_1_2_15']=true;
+  $media['menu_1_2_16']=true;
+  $media['menu_1_2_17']=true;
+  $media['menu_1_2_18']=true;
+  $media['menu_1_2_19']=true;
+  $media['menu_1_2_22']=true;
+  $media['menu_1_2_24']=true;
+  $media['menu_1_2_25']=true;
+  $media['menu_1_2_26']=true;
+
+  $media['menu_2_1']=true;
+
+  $media['menu_3_2_1']=true;
+  $media['menu_3_2_2']=true;
+
+  $media['menu_4_1']=true;
+  $media['menu_4_2']=true;
+  $media['menu_4_3']=true;
+  $media['menu_4_4']=true;
+  $media['menu_4_9']=true;
+  $media['menu_4_10']=true;
+  $media['menu_4_13']=true;
+  $media['menu_5_1_1']=true;
+  $media['menu_6_2']=true;
+  $media['menu_6_5']=true;
+  $media['menu_6_7']=true;
+  $media['menu_6_11']=true;
+
+  $media['menu_7_1']=true;
+  $media['menu_7_2']=true;
+  $media['menu_7_3']=true;
+  $media['menu_7_4']=true;
+  $media['menu_7_5']=true;
+  $media['menu_8_1']=true;
+  $media['menu_8_2']=true;
+  $media['menu_8_3']=true;
+  $media['menu_8_4']=true;
+  $media['menu_8_5']=true;
+  $media['menu_8_6']=true;
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +93,7 @@
       <div class="view_head">
         <a href="menu.php"><img src="./img/img_menubar.png" class="menubar"/></a>
         <?php
-        $is_file = file_exists("./media/{$file_name}.mp4");
-        if($is_file) $img_movie='img_movie.png';
+        if($media[$file_name]) $img_movie='img_movie.png';
         else $img_movie='img_nomovie.png';
         ?>
         <img src="./img/<?php echo $img_movie?>" class="movie" <?php if($img_movie=='img_movie.png') echo "onclick=\" location.href='media.php?menu={$_GET['menu']}&id={$_GET['id']}&ogg={$_GET['ogg']}'\""?>/>
