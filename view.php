@@ -49,7 +49,6 @@
     <link rel="stylesheet" href="./css/default.css">
   </head>
   <body>
-    <?php echo $file_name; ?>
     <div class="background">
       <div class="view_head">
         <a href="menu.php"><img src="./img/img_menubar.png" class="menubar"/></a>
