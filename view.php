@@ -2,7 +2,6 @@
 <?php
 
   if(!$_GET['id'])$_GET['id']=1;
-  $file_name = 'menu_'.$_GET['menu'].'_'.$_GET['id'];
   $total_file = 0;
   if($_GET['menu']=='3_2') $_GET['ogg']='true';
   for($i=1;;$i++){
@@ -13,6 +12,7 @@
     }
   }
   if($_GET['id']>$total_file) $_GET['id']=$total_file;
+  $file_name = 'menu_'.$_GET['menu'].'_'.$_GET['id'];
   ?>
 
 <?php
