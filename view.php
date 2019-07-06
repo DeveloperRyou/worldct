@@ -2,7 +2,7 @@
 <?php
 
   if(!$_GET['id'])$_GET['id']=1;
-  $file_name = 'menu_'.$_GET['menu'].'_'.$_GET['id'];
+  $file_name = 'menu_'.$_GET['menu'].'_'.(string)$_GET['id'];
   $total_file = 0;
   if($_GET['menu']=='3_2') $_GET['ogg']='true';
   for($i=1;;$i++){
@@ -15,7 +15,7 @@
   if(!($_GET['menu']=='7'||$_GET['menu']=='8')){
     $is_file = is_file('./img/'.$file_name.'.jpg');
     if(!$is_file){
-      if($_GET['id']<='0'&&$_GET['id']){
+      if((int)$_GET['id']<=0&&$_GET['id']){
         $tmp=$total_file;
       }
       else{
@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="./css/default.css">
   </head>
   <body>
+    <?php echo $file_name; ?>
     <div class="background">
       <div class="view_head">
         <a href="menu.php"><img src="./img/img_menubar.png" class="menubar"/></a>
