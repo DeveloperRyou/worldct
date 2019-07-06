@@ -6,14 +6,14 @@
   $total_file = 0;
   if($_GET['menu']=='3_2') $_GET['ogg']='true';
   for($i=1;;$i++){
-    $tmp_is_file=file_exists('./img/'.'menu_'.$_GET['menu'].'_'.$i.'.jpg');
+    $tmp_is_file=is_file('./img/'.'menu_'.$_GET['menu'].'_'.$i.'.jpg');
     if(!$tmp_is_file){
       $total_file=$i-1;
       break;
     }
   }
   if(!($_GET['menu']=='7'||$_GET['menu']=='8')){
-    $is_file = file_exists('./img/'.$file_name.'.jpg');
+    $is_file = is_file('./img/'.$file_name.'.jpg');
     if(!$is_file){
       if($_GET['id']<='0'&&$_GET['id']){
         $tmp=$total_file;
@@ -53,7 +53,7 @@
       <div class="view_head">
         <a href="menu.php"><img src="./img/img_menubar.png" class="menubar"/></a>
         <?php
-        $is_file = file_exists('./media/'.$file_name.'.mp4');
+        $is_file = is_file('./media/'.$file_name.'.mp4');
         if($is_file) $img_movie='img_movie.png';
         else $img_movie='img_nomovie.png';
         ?>
