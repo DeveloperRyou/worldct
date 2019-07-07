@@ -47,9 +47,6 @@
 
   $media['menu_2_1']=true;
 
-  $media['menu_3_2_1']=true;
-  $media['menu_3_2_2']=true;
-
   $media['menu_4_1']=true;
   $media['menu_4_2']=true;
   $media['menu_4_3']=true;
@@ -90,6 +87,7 @@
         <?php
         if($media[$file_name]) $img_movie='img_movie.png';
         else $img_movie='img_nomovie.png';
+        if($_GET['menu']=='7'||$_GET['menu']=='8') $img_movie='img_nomovie.png';
         ?>
         <img src="./img/<?php echo $img_movie?>" class="movie" <?php if($img_movie=='img_movie.png') echo "onclick=\" location.href='media.php?menu={$_GET['menu']}&id={$_GET['id']}&ogg={$_GET['ogg']}'\""?>/>
 
@@ -148,5 +146,9 @@
         <a href="index.php"><img src="./img/img_earth.png" class="home"/></a>
       </div>
     </div>
+    <?php if($_GET['menu']=='3_2') { ?>
+      <audio src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.ogg" autoplay controls>
+      </audio>
+    <?php }?>
   </body>
 </html>

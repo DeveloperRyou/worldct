@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/default.css">
   </head>
   <body>
-    <img class="background" src="./img/img_main.png">
+    <img class="background img" src="./img/img_main.png">
     <div class="background front">
       <p id="text1">초등 저학년을 위한</p>
       <p id="text2">놀면서 배우는</p>
