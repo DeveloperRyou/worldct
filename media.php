@@ -14,7 +14,7 @@
       <?php if($_GET['ogg']==true) { ?>
         <audio autoplay controls>
           <source src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.ogg" type="audio/ogg">
-          <source src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.mp3" type="audio/ogg">  
+          <source src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.mp3" type="audio/mpeg">  
         </audio>
         <img class="audio" src="./img/<?php echo $file_name?>.jpg" alt="">
       <?php } else{ ?>
