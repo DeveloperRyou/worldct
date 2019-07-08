@@ -12,7 +12,9 @@
     <div class="background table img">
       <div class="table_cell">
       <?php if($_GET['ogg']==true) { ?>
-        <audio src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.ogg" autoplay controls>
+        <audio autoplay controls>
+          <source src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.ogg" type="audio/ogg">
+          <source src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.mp3" type="audio/ogg">  
         </audio>
         <img class="audio" src="./img/<?php echo $file_name?>.jpg" alt="">
       <?php } else{ ?>

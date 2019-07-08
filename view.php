@@ -147,7 +147,9 @@
       </div>
     </div>
     <?php if($_GET['menu']=='3_2') { ?>
-      <audio src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.ogg" autoplay controls>
+      <audio autoplay controls>
+        <source src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.ogg" type="audio/ogg">
+        <source src="https://storage.googleapis.com/worldct.appspot.com/media/<?php echo $file_name?>.mp3" type="audio/ogg">
       </audio>
     <?php }?>
   </body>
